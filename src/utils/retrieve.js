@@ -44,7 +44,7 @@ export const getJson = async (url, options = {}) => {
     proxy = null,
     agent = null,
     signal = null,
-  } = options
+  } = options || {}
 
   const res = proxy ? await profetch(url, { proxy, signal }) : await fetch(url, { headers, agent, signal })
 
